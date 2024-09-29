@@ -16,7 +16,7 @@
             </form>
 
             <div class="flex justify-end">
-                <a href="{{ route('admin.applications.create')}}" class="px-4 py-2 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600">
+                <a href="{{ route('admin.applications.create')}}" class="px-4 py-2 rounded-md bg-green-600 text-green-100 hover:bg-green-800">
                     {{ __('Criar Candidatura') }}
                 </a>
             </div>

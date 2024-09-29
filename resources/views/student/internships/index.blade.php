@@ -63,7 +63,7 @@
                     <form action="{{ route('student.internships.apply', $internship->id) }}" method="post" onsubmit="return confirm('{{ __('Tem certeza? (A candidatura é irreversível.)') }}');">
                         @csrf
                         @method('POST')
-                        <button type="submit" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-100 flex items-center justify-center">
+                        <button type="submit" class="py-2 px-4 bg-green-600 text-white rounded hover:bg-green-800 active:bg-green-950 disabled:opacity-50 mt-4 w-100 flex items-center justify-center">
                             {{ __('quero essa vaga') }}
                         </button>
                     </form>

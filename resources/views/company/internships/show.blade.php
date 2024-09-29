@@ -1,13 +1,13 @@
 <x-app-layout>
     <div class="font-sans antialiased">
-        <div class="flex flex-col items-center min-h-screen pt-6 bg-gray-100 sm:justify-center sm:pt-0">
+        <div class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
             <div class="w-full px-16 py-20 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
                 <div class="mb-4">
                     <h1 class="text-3xl font-bold">{{ $internship->title }}</h1>
 
                     <div class="px-4 py-6 sm:px-0">
-                        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" href="{{ route('company.internships.index') }}">{{ __('Voltar') }}</a>
-                        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" href="{{ route('company.internships.edit', $internship->id) }}">{{ __('Editar') }}</a>
+                        <a class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" href="{{ route('company.internships.index') }}">{{ __('Voltar') }}</a>
+                        <a class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" href="{{ route('company.internships.edit', $internship->id) }}">{{ __('Editar') }}</a>
                     </div>
 
                     <div class="px-4 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">

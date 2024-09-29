@@ -23,7 +23,7 @@
 
     <div
         class="relative content-center w-full p-1 text-left bg-white border rounded-md sm:text-sm sm:leading-5"
-        x-bind:class="{'border-blue-300 ring ring-blue-200 ring-opacity-50':open, 'bg-gray-200 cursor-default':disabled}"
+        x-bind:class="{'border-green-300 ring ring-green-200 ring-opacity-50':open, 'bg-gray-200 cursor-default':disabled}"
         @click.prevent="toggleSelect()"
     >
         <div id="placeholder">
@@ -32,7 +32,7 @@
         @isset($attributes['multiple'])
             <div class="flex flex-wrap space-x-1" x-cloak x-show="selected.length > 0">
                 <template x-for="(key, index) in selected" :key="index">
-                    <div class="text-gray-800 rounded-full truncate bg-blue-300 px-2 py-0.5 my-0.5 flex flex-row items-center">
+                    <div class="text-gray-800 rounded-full truncate bg-green-300 px-2 py-0.5 my-0.5 flex flex-row items-center">
                         <div class="px-2 truncate" x-text="data[key]"></div>
                         <div x-show="!disabled" x-bind:class="{'cursor-pointer':!disabled}" class="w-4" @click.prevent.stop="deselectOption(index)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class = 'h-4 fill-current'><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 16.538l-4.592-4.548 4.546-4.587-1.416-1.403-4.545 4.589-4.588-4.543-1.405 1.405 4.593 4.552-4.547 4.592 1.405 1.405 4.555-4.596 4.591 4.55 1.403-1.416z"/></svg></div>
                     </div>
@@ -40,7 +40,7 @@
             </div>
         @else
             <div class="flex flex-wrap" x-cloak x-show="selected">
-                <div class="text-gray-800 rounded-full truncate bg-blue-300 px-2 py-0.5 my-0.5 flex flex-row items-center">
+                <div class="text-gray-800 rounded-full truncate bg-green-300 px-2 py-0.5 my-0.5 flex flex-row items-center">
                     <div class="px-2 truncate" x-text="data[selected]"></div>
                     <div x-show="!disabled" x-bind:class="{'cursor-pointer':!disabled}" class="h-4" @click.prevent.stop="deselectOption()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class = 'h-4 fill-current'><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 16.538l-4.592-4.548 4.546-4.587-1.416-1.403-4.545 4.589-4.588-4.543-1.405 1.405 4.593 4.552-4.547 4.592 1.405 1.405 4.555-4.596 4.591 4.55 1.403-1.416z"/></svg></div>
                 </div>
@@ -54,7 +54,7 @@
         >
 
             <div class="relative z-30 w-full p-2 bg-white">
-                <input type="search" x-model="search" x-on:click.prevent.stop="open=true" class="block w-full p-2 border border-gray-300 rounded-md focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm sm:leading-5">
+                <input type="search" x-model="search" x-on:click.prevent.stop="open=true" class="block w-full p-2 border border-gray-300 rounded-md focus:border-green-300 focus:ring focus:ring-green-200 focus:ring-opacity-50 sm:text-sm sm:leading-5">
 
             </div>
 
@@ -64,14 +64,14 @@
                     @isset($attributes['multiple'])
                     <div
                         class="px-2 py-1"
-                        x-bind:class="{'bg-gray-300 text-white hover:none':selected.includes(key), 'hover:bg-blue-500 hover:text-white cursor-pointer':!(selected.includes(key)), 'bg-blue-500 text-white':currentIndex==index}"
+                        x-bind:class="{'bg-gray-300 text-white hover:none':selected.includes(key), 'hover:bg-green-500 hover:text-white cursor-pointer':!(selected.includes(key)), 'bg-green-500 text-white':currentIndex==index}"
                         @click.prevent.stop="selectOption(key)"
                         x-text="Object.values(options)[index]">
                     </div>
                     @else
                     <div
                         class="px-2 py-1"
-                        x-bind:class="{'bg-gray-300 text-white hover:none':selected==key, 'hover:bg-blue-500 hover:text-white cursor-pointer':!(selected==key), 'bg-blue-500 text-white':currentIndex==index}"
+                        x-bind:class="{'bg-gray-300 text-white hover:none':selected==key, 'hover:bg-green-500 hover:text-white cursor-pointer':!(selected==key), 'bg-green-500 text-white':currentIndex==index}"
                         @click.prevent.stop="selectOption(key)"
                         x-text="Object.values(options)[index]">
                     </div>
