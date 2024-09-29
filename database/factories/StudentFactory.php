@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\StudentInfo;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

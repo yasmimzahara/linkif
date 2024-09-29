@@ -23,6 +23,7 @@ class Internship extends Model
         'wage',
         'address_id',
         'company_id',
+        'expires_at'
     ];
 
     protected $searchableBy = [

@@ -35,9 +35,4 @@ class Company extends User
     {
         return $this->hasOne(CompanyInfo::class);
     }
-
-    public function internships(): HasMany
-    {
-        return $this->hasMany(Internship::class);
-    }
 }

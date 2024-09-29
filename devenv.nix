@@ -5,12 +5,13 @@
   languages.javascript.enable = true;
   languages.javascript.corepack.enable = true;
 
-  packages = [ pkgs.nodejs_22 ];
+  packages = [ pkgs.nodejs_22];
 
   process.implementation = "overmind";
   processes = {
     npm-run.exec = "npm run dev";
     laravel-run.exec = "php artisan serve";
+
   };
 
 
@@ -23,10 +24,9 @@
   # https://devenv.sh/scripts/
   # scripts.hello.exec = "echo hello from $GREET";
 
-  # enterShell = ''
-  #   hello
-  #   git --version
-  # '';
+  enterShell = ''
+    export WKHTML_PDF_BINARY="$(pwd)/wkhtmltopdf"
+  '';
 
   # https://devenv.sh/languages/
   # languages.nix.enable = true;

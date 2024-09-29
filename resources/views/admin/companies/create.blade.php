@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="font-sans antialiased">
-        <div class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
+        <div class="flex flex-col items-center min-h-screen pt-6 bg-gray-100 sm:justify-center sm:pt-0">
 
             <div class="w-full px-16 py-20 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
 
@@ -29,7 +29,7 @@
                                 {{ __('E-mail') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email"  value="{{old('email')}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email" placeholder="255" value="{{old('email')}}">
                             @error('email')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -69,7 +69,7 @@
                                     {{ __('Rua') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][street]"  value="{{old('info.address.street')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][street]" placeholder="255" value="{{old('info.address.street')}}">
                                 @error('info.address.street')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -82,7 +82,7 @@
                                     {{ __('Número') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][number]"  value="{{old('info.address.number')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][number]" placeholder="255" value="{{old('info.address.number')}}">
                                 @error('info.address.number')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -95,7 +95,7 @@
                                     {{ __('CEP') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][zip_code]"  value="{{old('info.address.zip_code')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][zip_code]" placeholder="255" value="{{old('info.address.zip_code')}}">
                                 @error('info.address.zip_code')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -108,7 +108,7 @@
                                     {{ __('Bairro') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][neighborhood]"  value="{{old('info.address.neighborhood')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][neighborhood]" placeholder="255" value="{{old('info.address.neighborhood')}}">
                                 @error('info.address.neighborhood')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -121,7 +121,7 @@
                                     {{ __('Cidade') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][city]"  value="{{old('info.address.city')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][city]" placeholder="255" value="{{old('info.address.city')}}">
                                 @error('info.address.city')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -134,7 +134,7 @@
                                     {{ __('Estado') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][state]"  value="{{old('info.address.state')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][state]" placeholder="255" value="{{old('info.address.state')}}">
                                 @error('info.address.state')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -147,7 +147,7 @@
                                     {{ __('País') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][country]"  value="{{old('info.address.country')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[address][country]" placeholder="255" value="{{old('info.address.country')}}">
                                 @error('info.address.country')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}

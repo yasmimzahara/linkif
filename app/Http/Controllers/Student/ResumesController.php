@@ -16,6 +16,13 @@ class ResumesController extends Controller
         return view('student.resumes.edit', compact('resume'));
     }
 
+    public function download()
+    {
+        $pdf = request()->user()->resume->toPdf();
+
+        return response()->download($pdf);
+    }
+
     public function update(ResumeUpdateRequest $request)
     {
         $resume = $this->currentStudentResume();

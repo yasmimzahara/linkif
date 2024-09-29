@@ -7,7 +7,6 @@ use App\Http\Requests\Admin\InternshipStoreRequest;
 use App\Http\Requests\Admin\InternshipUpdateRequest;
 use App\Models\Company;
 use App\Models\Internship;
-use App\Models\Superintendent;
 use App\Models\Course;
 use App\Models\Address;
 use Illuminate\Support\Facades\DB;
@@ -87,6 +86,7 @@ class InternshipsController extends Controller
     public function destroy(Internship $internship)
     {
         DB::transaction(function() use ($internship) {
+            $internship->applications()->delete();
             $internship->delete();
             $internship->address->delete();
         });

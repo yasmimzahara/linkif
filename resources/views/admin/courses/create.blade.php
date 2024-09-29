@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="font-sans antialiased">
-        <div class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
+        <div class="flex flex-col items-center min-h-screen pt-6 bg-gray-100 sm:justify-center sm:pt-0">
 
             <div class="w-full px-16 py-20 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
 
@@ -17,7 +17,7 @@
                                 {{ __('Nome') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="name"  value="{{old('name')}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="name" placeholder="255" value="{{old('name')}}">
                             @error('name')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}

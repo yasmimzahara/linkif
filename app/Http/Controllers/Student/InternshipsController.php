@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Internship;
 use App\Models\Application;
 use App\Models\Student;
+use App\Mail\Student\ApplyToInternship;
+use Illuminate\Support\Facades\Mail;
 
 class InternshipsController extends Controller
 {
@@ -53,10 +55,12 @@ class InternshipsController extends Controller
 
     public function apply(Internship $internship)
     {
-        Application::firstOrCreate([
+        $application = Application::firstOrCreate([
             'student_id' => $this->currentStudentId(),
             'internship_id' => $internship->id,
         ]);
+
+        Mail::to($internship->company)->send(new ApplyToInternship($application->id));
 
         return redirect()
                   ->route('student.internships.index')

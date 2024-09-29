@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Admin;
 use App\Models\Student;
 use App\Models\Resume;
-use App\Models\Superintendent;
 use App\Models\Course;
 use App\Models\Company;
 use App\Models\Address;
@@ -53,7 +52,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Resume::factory()->create([
-            'description' => '<h1>Me contrate agora</h1><ul><li>Sou pika</li><li>Sou foda</li></ul>',
+            'description' => '<h2>Me contrate agora</h2><ul><li>Sou pika</li><li>Sou foda</li></ul>',
             'student_id' => $student->id,
         ]);
         Resume::factory()->count(20)->create();
@@ -68,7 +67,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         CompanyInfo::factory()->create(['company_id' => $company->id]);
-        $companies = Company::factory()->count(20)->create();
+        $companies = CompanyInfo::factory()->count(20)->create()->pluck('company');
 
         $internship = Internship::factory()->create([
             'requirements' => 'Excel',

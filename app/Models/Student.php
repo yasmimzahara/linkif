@@ -30,16 +30,6 @@ class Student extends User
         });
     }
 
-    public function applications(): HasMany
-    {
-        return $this->hasMany(Application::class);
-    }
-
-    public function resume(): HasOne
-    {
-        return $this->hasOne(Resume::class);
-    }
-
     public function info(): HasOne
     {
         return $this->hasOne(StudentInfo::class);

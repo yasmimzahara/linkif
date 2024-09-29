@@ -15,9 +15,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     switch (\Auth::user()->type) {
-    case 'admin': return redirect()->route('admin.internships.index');
+    case 'admin': return view('admin/dashboard');
     case 'company': return view('company/dashboard');
-    case 'student': return redirect()->route('student.internships.index');
+    case 'student': return view('student/dashboard');
     }
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -70,6 +70,7 @@ Route::middleware('auth')->group(function () {
     Route::group(['middleware' => [IsStudent::class]], function(){
         Route::name('student.')->group(function () {
             Route::get('student/resumes', [Student\ResumesController::class, 'edit'])->name('resumes.edit');
+            Route::get('student/resume/download', [Student\ResumesController::class, 'download'])->name('resumes.download');
             Route::match(
                 ['put', 'patch'],
                 'student/resumes',

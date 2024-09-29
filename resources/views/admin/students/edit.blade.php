@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="font-sans antialiased">
-        <div class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
+        <div class="flex flex-col items-center min-h-screen pt-6 bg-gray-100 sm:justify-center sm:pt-0">
 
             <div class="w-full px-16 py-20 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
 
@@ -30,7 +30,7 @@
                                 {{ __('E-mail') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email"  value="{{old('email', $student->email)}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email" placeholder="255" value="{{old('email', $student->email)}}">
                             @error('email')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -43,7 +43,7 @@
                                 {{ __('Matrícula') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[registration_number]"  value="{{old('info.registration_number', $student->info->registration_number)}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[registration_number]" placeholder="255" value="{{old('info.registration_number', $student->info->registration_number)}}">
                             @error('info.registration_number')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}

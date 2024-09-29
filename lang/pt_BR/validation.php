@@ -217,7 +217,9 @@ return [
         'internship_id' => 'vaga',
         'info.cnpj' => 'cnpj',
         'course_id' => 'curso',
-        'company_id' => 'empresa'
+        'company_id' => 'empresa',
+
+        'expires_at' => 'Prazo'
     ],
 
 ];

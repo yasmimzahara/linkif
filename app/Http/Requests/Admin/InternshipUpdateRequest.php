@@ -30,6 +30,7 @@ class InternshipUpdateRequest extends FormRequest
             'shift' => '',
             'description' => '',
             'wage' => 'min:0',
+            'expires_at' => 'required|date',
             'company_id' => 'exists:App\Models\Company,id',
             'address.street' => '',
             'address.number' => '',

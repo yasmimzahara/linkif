@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Superintendent;
 use App\Models\Course;
 use App\Models\Address;
 use App\Models\Company;

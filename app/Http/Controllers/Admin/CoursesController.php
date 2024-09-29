@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CourseStoreRequest;
 use App\Http\Requests\Admin\CourseUpdateRequest;
 use App\Models\Course;
+use App\Models\StudentInfo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CoursesController extends Controller
 {
@@ -66,9 +68,23 @@ class CoursesController extends Controller
      */
     public function destroy(Course $course)
     {
-      $course->delete();
+        DB::transaction(function() use ($course) {
+            foreach ($course->internships as $internship) {
+                $internship->applications()->delete();
+            }
+            $course->internships()->delete();
+            $studentInfos = StudentInfo::where('course_id', '=', $course->id)->get();
+            foreach ($studentInfos as $info) {
+                $info->student->resume()->delete();
+                $info->student->applications()->delete();
+                DB::table('sessions')->where('user_id', '=', $info->student->id)->delete();
+                $info->delete();
+                $info->student->delete();
+            }
+            $course->delete();
+        });
 
-      return redirect()
+        return redirect()
                 ->route('admin.courses.index')
                 ->with('message', 'Curso deletado com sucesso');
     }

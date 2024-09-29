@@ -18,4 +18,8 @@ class Address extends Model
         'country',
         'state',
     ];
+
+    public function formatted() {
+        return "$this->street, $this->number, $this->neighborhood, $this->city, $this->state, {$this->country}.";
+    }
 }

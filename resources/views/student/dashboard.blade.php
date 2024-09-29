@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Tela Inicial') }}
+            {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
@@ -11,10 +11,15 @@
                 <div class="p-6 text-gray-900">
                     <ul>
                         <li>
-                            <a class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" href="{{ route('student.resumes.edit') }}">{{ __('Editar Currículo') }}</a>
+                            <a class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" href="{{ route('student.resumes.edit') }}">{{ __('Editar Currículo') }}</a>
                         </li>
+                        <br>
                         <li>
-                            <a class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" href="{{ route('student.internships.index') }}">{{ __('Vagas') }}</a>
+                            <a class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" href="{{ route('student.resumes.download') }}">{{ __('Baixar Currículo') }}</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" href="{{ route('student.internships.index') }}">{{ __('Vagas') }}</a>
                         </li>
                     </ul>
                 </div>

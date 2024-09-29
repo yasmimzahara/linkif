@@ -64,14 +64,14 @@
                     @isset($attributes['multiple'])
                     <div
                         class="px-2 py-1"
-                        x-bind:class="{'bg-gray-300 text-white hover:none':selected.includes(key), 'hover:bg-green-500 hover:text-white cursor-pointer':!(selected.includes(key)), 'bg-green-500 text-white':currentIndex==index}"
+                        x-bind:class="{'bg-gray-300 text-white hover:none':selected.includes(key), 'hover:bg-green-800 hover:text-white cursor-pointer':!(selected.includes(key)), 'bg-green-600 text-white':currentIndex==index}"
                         @click.prevent.stop="selectOption(key)"
                         x-text="Object.values(options)[index]">
                     </div>
                     @else
                     <div
                         class="px-2 py-1"
-                        x-bind:class="{'bg-gray-300 text-white hover:none':selected==key, 'hover:bg-green-500 hover:text-white cursor-pointer':!(selected==key), 'bg-green-500 text-white':currentIndex==index}"
+                        x-bind:class="{'bg-gray-300 text-white hover:none':selected==key, 'hover:bg-green-800 hover:text-white cursor-pointer':!(selected==key), 'bg-green-600 text-white':currentIndex==index}"
                         @click.prevent.stop="selectOption(key)"
                         x-text="Object.values(options)[index]">
                     </div>

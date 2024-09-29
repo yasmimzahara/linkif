@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Company;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class InternshipUpdateRequest extends FormRequest
 {
@@ -27,9 +28,13 @@ class InternshipUpdateRequest extends FormRequest
             'course_id' => 'exists:App\Models\Course,id',
             'title' => 'required|string|max:255',
             'workload' => 'min:0',
-            'shift' => '',
+            'shift' => [
+                'required',
+                Rule::in(['day', 'afternoon', 'night']),
+            ],
             'description' => '',
             'wage' => 'min:0',
+            'expires_at' => 'required|date',
             'company_id' => 'exists:App\Models\Company,id',
             'address.street' => '',
             'address.number' => '',

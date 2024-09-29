@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Student;
 use App\Models\Course;
+use App\Models\Resume;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,10 +19,16 @@ class StudentInfoFactory extends Factory
      */
     public function definition(): array
     {
+        $student = Student::factory()->create();
+
+        Resume::factory()->create([
+            'student_id' => $student->id,
+        ]);
+
         return [
             'registration_number' => fake()->numerify('######'),
             'course_id' => Course::factory(),
-            'student_id' => Student::factory(),
+            'student_id' => $student->id,
         ];
     }
 }

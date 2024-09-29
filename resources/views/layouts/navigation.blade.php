@@ -12,36 +12,9 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    @if(\Auth::user()->type == 'admin')
-                    <x-nav-link :href="route('admin.admins.index')" :active="request()->routeIs('admin.admins.index')">
-                        {{ __('Admin') }}
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.applications.index')" :active="request()->routeIs('admin.applications.index')">
-                        {{ __('Candidaturas') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('admin.companies.index')" :active="request()->routeIs('admin.companies.index')">
-                        {{ __('Empresas') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('admin.courses.index')" :active="request()->routeIs('admin.courses.index')">
-                        {{ __('Cursos') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('admin.internships.index')" :active="request()->routeIs('admin.internships.index')">
-                        {{ __('Vagas') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('admin.students.index')" :active="request()->routeIs('admin.students.index')">
-                        {{ __('Estudantes') }}
-                    </x-nav-link>
-                    @endif
-                    @if(\Auth::user()->type == 'student')
-                    <x-nav-link :href="route('student.resumes.edit')" :active="request()->routeIs('student.resumes.edit')">
-                        {{ __('Editar Currículo') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('student.internships.index')" :active="request()->routeIs('student.internships.index')">
-                        {{ __('Vagas') }}
-                    </x-nav-link>
-                    @endif
-                    @if(\Auth::user()->type == 'company')
-                    @endif
                 </div>
             </div>
 

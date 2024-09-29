@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StudentStoreRequest;
 use App\Http\Requests\Admin\StudentUpdateRequest;
 use App\Http\Requests\Admin\UserUpdatePasswordRequest;
+use App\Mail\Auth\NewUserPassword;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Student;
 use App\Models\StudentInfo;
@@ -13,6 +14,8 @@ use App\Models\Resume;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 
 class StudentsController extends Controller
 {
@@ -43,9 +46,13 @@ class StudentsController extends Controller
     public function store(StudentStoreRequest $request)
     {
         DB::transaction(function () use ($request) {
-            $student = Student::create($request->validated() + [
-                'password' => Hash::make($request->password),
-            ] + $request->validated());
+            $student = new Student($request->validated());
+            $rememberToken = Str::random(60);
+            $student->setRawAttributes($student->getAttributes() + [
+                'password' => '',
+                'remember_token' => $rememberToken,
+            ]);
+            $student->save();
 
             Resume::create(
                 array_filter(
@@ -55,6 +62,8 @@ class StudentsController extends Controller
             StudentInfo::create([
                 'student_id' => $student->id,
             ] + $request->validated()['info']);
+
+            Mail::to($student)->send(new NewUserPassword($student->id, $rememberToken));
         });
 
         return redirect()
@@ -96,7 +105,10 @@ class StudentsController extends Controller
     public function destroy(Student $student)
     {
         DB::transaction(function () use ($student) {
-            $student->resume->delete();
+            DB::table('sessions')->where('user_id', '=', $student->id)->delete();
+            $student->applications()->delete();
+            $student->resume()->delete();
+            $student->info()->delete();
             $student->delete();
         });
 

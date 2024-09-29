@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Student;
+use App\Models\StudentInfo;
 use App\Models\Internship;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,7 +19,7 @@ class ApplicationFactory extends Factory
     public function definition(): array
     {
         return [
-            'student_id' => Student::factory(),
+            'student_id' => StudentInfo::factory()->create()->student_id,
             'internship_id' => Internship::factory(),
         ];
     }

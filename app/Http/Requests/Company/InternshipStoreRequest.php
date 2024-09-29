@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Company;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class InternshipStoreRequest extends FormRequest
 {
@@ -22,14 +23,18 @@ class InternshipStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'requirements' => '',
+            'requirements' => 'required',
             'integration_agency' => '',
             'course_id' => 'exists:App\Models\Course,id',
             'title' => 'required|string|max:255',
-            'workload' => 'min:0',
-            'shift' => '',
-            'description' => '',
-            'wage' => 'min:0',
+            'workload' => 'required|min:0',
+            'shift' => [
+                'required',
+                Rule::in(['day', 'afternoon', 'night']),
+            ],
+            'description' => 'required',
+            'wage' => 'required|min:0',
+            'expires_at' => 'required|date|after:now',
             'company_id' => 'exists:App\Models\Company,id',
             'address.street' => '',
             'address.number' => '',

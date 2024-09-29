@@ -7,7 +7,6 @@ use App\Http\Requests\Company\InternshipStoreRequest;
 use App\Http\Requests\Company\InternshipUpdateRequest;
 use App\Models\Company;
 use App\Models\Internship;
-use App\Models\Superintendent;
 use App\Models\Course;
 use App\Models\Address;
 use Illuminate\Support\Facades\DB;
@@ -22,6 +21,7 @@ class InternshipsController extends Controller
     public function index()
     {
         $internships = $this->currentCompany()->internships()
+                            ->orderBy('created_at', 'desc')
                             ->search(request()->input())
                             ->paginate();
 

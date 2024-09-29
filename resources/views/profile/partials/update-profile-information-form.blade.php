@@ -47,6 +47,65 @@
             @endif
         </div>
 
+        @if(\Auth::user()->type == 'company')
+        <div>
+            <x-input-label for="info.cnpj" :value="'CNPJ'" />
+            <x-text-input id="info.cnpj" name="info[cnpj]" type="text" class="mt-1 block w-full" :value="old('info.cnpj', $user->info->cnpj)" autocomplete="info.cnpj" />
+            <x-input-error class="mt-2" :messages="$errors->get('info.cnpj')" />
+        </div>
+
+        <div>
+            <x-input-label for="info.phone" :value="'Telefone'" />
+            <x-text-input id="info.phone" name="info[phone]" type="tel" class="mt-1 block w-full" :value="old('info.phone', $user->info->phone)" autocomplete="info.phone" />
+            <x-input-error class="mt-2" :messages="$errors->get('info.phone')" />
+        </div>
+
+        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow">
+            <div>
+                <x-input-label for="info.address.street" :value="'Rua'" />
+                <x-text-input id="info.address.street" name="info[address][street]" type="text" class="mt-1 block w-full" :value="old('info.address.street', $user->info->address->street)" autocomplete="info.address.street" />
+                <x-input-error class="mt-2" :messages="$errors->get('info.address.street')" />
+            </div>
+            <div>
+                <x-input-label for="info.address.number" :value="'Número'" />
+                <x-text-input id="info.address.number" name="info[address][number]" type="text" class="mt-1 block w-full" :value="old('info.address.number', $user->info->address->number)" autocomplete="info.address.number" />
+                <x-input-error class="mt-2" :messages="$errors->get('info.address.number')" />
+            </div>
+            <div>
+                <x-input-label for="info.address.zip_code" :value="'CEP'" />
+                <x-text-input id="info.address.zip_code" name="info[address][zip_code]" type="text" class="mt-1 block w-full" :value="old('info.address.zip_code', $user->info->address->zip_code)" autocomplete="info.address.zip_code" />
+                <x-input-error class="mt-2" :messages="$errors->get('info.address.zip_code')" />
+            </div>
+            <div>
+                <x-input-label for="info.address.neighborhood" :value="'Bairro'" />
+                <x-text-input id="info.address.neighborhood" name="info[address][neighborhood]" type="text" class="mt-1 block w-full" :value="old('info.address.neighborhood', $user->info->address->neighborhood)" autocomplete="info.address.neighborhood" />
+                <x-input-error class="mt-2" :messages="$errors->get('info.address.neighborhood')" />
+            </div>
+            <div>
+                <x-input-label for="info.address.city" :value="'Cidade'" />
+                <x-text-input id="info.address.city" name="info[address][city]" type="text" class="mt-1 block w-full" :value="old('info.address.city', $user->info->address->city)" autocomplete="info.address.city" />
+                <x-input-error class="mt-2" :messages="$errors->get('info.address.city')" />
+            </div>
+            <div>
+                <x-input-label for="info.address.state" :value="'Estado'" />
+                <x-text-input id="info.address.state" name="info[address][state]" type="text" class="mt-1 block w-full" :value="old('info.address.state', $user->info->address->state)" autocomplete="info.address.state" />
+                <x-input-error class="mt-2" :messages="$errors->get('info.address.state')" />
+            </div>
+            <div>
+                <x-input-label for="info.address.country" :value="'País'" />
+                <x-text-input id="info.address.country" name="info[address][country]" type="text" class="mt-1 block w-full" :value="old('info.address.country', $user->info->address->country)" autocomplete="info.address.country" />
+                <x-input-error class="mt-2" :messages="$errors->get('info.address.country')" />
+            </div>
+        </div>
+        @endif
+
+        @if(\Auth::user()->type == 'student')
+        <div>
+            <p>Matrícula: {{ \Auth::user()->info->registration_number }}</p>
+            <p>Curso: {{ \Auth::user()->info->course->name }}</p>
+        </div>
+        @endif
+
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 

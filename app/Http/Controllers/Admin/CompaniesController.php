@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CompanyStoreRequest;
 use App\Http\Requests\Admin\CompanyUpdateRequest;
 use App\Http\Requests\Admin\UserUpdatePasswordRequest;
+use App\Mail\Auth\NewUserPassword;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Company;
 use App\Models\CompanyInfo;
 use App\Models\Address;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CompaniesController extends Controller
 {
@@ -41,13 +44,21 @@ class CompaniesController extends Controller
     {
         DB::transaction(function() use ($request) {
             $address = Address::create($request->validated()['info']['address']);
-            $company = Company::create($request->validated() + [
-                'password' => Hash::make($request->password),
-            ] + $request->validated());
+
+            $company = new Company($request->validated());
+            $rememberToken = Str::random(60);
+            $company->setRawAttributes($company->getAttributes() + [
+                'password' => '',
+                'remember_token' => $rememberToken,
+            ]);
+            $company->save();
+
             CompanyInfo::create([
                 'address_id' => $address->id,
                 'company_id' => $company->id,
             ] + $request->validated()['info']);
+
+            Mail::to($company)->send(new NewUserPassword($company->id, $rememberToken));
         });
 
         return redirect()
@@ -71,7 +82,7 @@ class CompaniesController extends Controller
         DB::transaction(function() use ($request, $company) {
             $company->update($request->validated());
             $company->info->update($request->validated()['info']);
-            $company->companyinfo->address->update($request->validated()['info']['address']);
+            $company->info->address->update($request->validated()['info']['address']);
         });
 
         return redirect()
@@ -87,6 +98,10 @@ class CompaniesController extends Controller
         DB::transaction(function() use ($company) {
             $company->info->delete();
             $company->info->address->delete();
+            foreach ($company->internships as $internship) {
+                $internship->applications()->delete();
+            }
+            $company->internships()->delete();
             $company->delete();
         });
 

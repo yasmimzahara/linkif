@@ -2,7 +2,7 @@
     <link href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css" rel="stylesheet" />
 
     <div class="font-sans antialiased">
-        <div class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
+        <div class="flex flex-col items-center min-h-screen pt-6 bg-gray-100 sm:justify-center sm:pt-0">
 
             <div class="w-full px-16 py-20 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
 

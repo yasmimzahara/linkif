@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="font-sans antialiased">
-        <div class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
+        <div class="flex flex-col items-center min-h-screen pt-6 bg-gray-100 sm:justify-center sm:pt-0">
 
             <div class="w-full px-16 py-20 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
 
@@ -29,7 +29,7 @@
                                 {{ __('Agência Integradora') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="integration_agency"  value="{{old('integration_agency')}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="integration_agency" placeholder="255" value="{{old('integration_agency')}}">
                             @error('integration_agency')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -56,7 +56,7 @@
                                 {{ __('Título') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="title"  value="{{old('title')}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="title" placeholder="255" value="{{old('title')}}">
                             @error('title')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -69,7 +69,7 @@
                                 {{ __('Carga de Trabalho') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="1" min="1" max="40" name="workload"  value="{{old('workload')}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="1" min="1" max="40" name="workload" placeholder="255" value="{{old('workload')}}">
                             @error('workload')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -109,7 +109,7 @@
                                 {{ __('Salário') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="1" min="1" name="wage"  value="{{old('wage')}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="1" min="1" name="wage" placeholder="255" value="{{old('wage')}}">
                             @error('wage')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -123,7 +123,7 @@
                                     {{ __('Rua') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[street]"  value="{{old('address.street')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[street]" placeholder="255" value="{{old('address.street')}}">
                                 @error('address[street]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -136,7 +136,7 @@
                                     {{ __('Número') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[number]"  value="{{old('address.number')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[number]" placeholder="255" value="{{old('address.number')}}">
                                 @error('address[number]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -149,7 +149,7 @@
                                     {{ __('CEP') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[zip_code]"  value="{{old('address.zip_code')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[zip_code]" placeholder="255" value="{{old('address.zip_code')}}">
                                 @error('address[zip_code]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -162,7 +162,7 @@
                                     {{ __('Bairro') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[neighborhood]"  value="{{old('address.neighborhood')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[neighborhood]" placeholder="255" value="{{old('address.neighborhood')}}">
                                 @error('address[neighborhood]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -175,7 +175,7 @@
                                     {{ __('Cidade') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[city]"  value="{{old('address.city')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[city]" placeholder="255" value="{{old('address.city')}}">
                                 @error('address[city]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -188,7 +188,7 @@
                                     {{ __('Estado') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[state]"  value="{{old('address.state')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[state]" placeholder="255" value="{{old('address.state')}}">
                                 @error('address[state]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -201,7 +201,7 @@
                                     {{ __('País') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[country]"  value="{{old('address.country')}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[country]" placeholder="255" value="{{old('address.country')}}">
                                 @error('address[country]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -216,8 +216,7 @@
                                 {{ __('Prazo') }}
                             </label>
 
-                            <input class="block w-1/2 mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="date" name="expires_at"  value="{{old('expires_at')}}">
-                            <input class="block w-1/2 mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="time" name="expires_at"  value="{{old('expires_at')}}">
+                            <input class="block w-1/2 mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="datetime-local" name="expires_at" placeholder="255" value="{{old('expires_at')}}">
                             @error('expires_at')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
