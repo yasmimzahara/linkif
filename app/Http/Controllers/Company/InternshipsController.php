@@ -55,10 +55,14 @@ class InternshipsController extends Controller
 
         DB::transaction(function() use ($request) {
             $address = Address::create($request->validated()['address']);
-            $internship = Internship::create([
+            $internship = new Internship;
+            $internship->setExpiresAtDateAttribute($request->expires_at_date);
+            $internship->setExpiresAtTimeAttribute($request->expires_at_time);
+            $internship->fill([
                 'address_id' => $address->id,
                 'company_id' => \Auth::id(),
             ] + $request->validated());
+            $internship->save();
         });
 
         return redirect()
@@ -101,6 +105,8 @@ class InternshipsController extends Controller
         Gate::authorize('update', $internship);
 
         DB::transaction(function() use ($request, $internship) {
+            $internship->setExpiresAtDateAttribute($request->expires_at_date);
+            $internship->setExpiresAtTimeAttribute($request->expires_at_time);
             $internship->update($request->validated());
             $internship->address->update($request->validated()['address']);
         });
@@ -118,6 +124,7 @@ class InternshipsController extends Controller
         Gate::authorize('delete', $internship);
 
         DB::transaction(function() use ($internship) {
+            $internship->applications()->delete();
             $internship->delete();
             $internship->address->delete();
         });

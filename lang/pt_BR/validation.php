@@ -173,8 +173,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'expires_at_date' => [
+            'after' => 'O campo Prazo (dia) deve conter uma data posterior a hoje.',
         ],
     ],
 
@@ -219,7 +219,9 @@ return [
         'course_id' => 'curso',
         'company_id' => 'empresa',
 
-        'expires_at' => 'Prazo'
+        'expires_at' => 'Prazo',
+        'expires_at_date' => 'Prazo (dia)',
+        'expires_at_time' => 'Prazo (hora)',
     ],
 
 ];

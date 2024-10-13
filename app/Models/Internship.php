@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Traits\Searchable;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Carbon\Carbon;
 
 class Internship extends Model
 {
@@ -23,7 +25,7 @@ class Internship extends Model
         'wage',
         'address_id',
         'company_id',
-        'expires_at'
+        'expires_at',
     ];
 
     protected $searchableBy = [
@@ -66,5 +68,31 @@ class Internship extends Model
     public function isTooOld(): bool
     {
         return $this->expires_at < new \DateTime();
+    }
+
+    protected function expiresAtDate(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->expires_at->toDateString(),
+        );
+    }
+
+    public function setExpiresAtDateAttribute($date)
+    {
+        $time = $this->expires_at?->toTimeString() ?: '00:00:00';
+        $this->expires_at = Carbon::parse("$date $time");
+    }
+
+    protected function expiresAtTime(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->expires_at->format('H:i'),
+        );
+    }
+
+    public function setExpiresAtTimeAttribute($time)
+    {
+        $date = $this->expires_at?->toDateString() ?: Carbon::now()->toDateString();
+        $this->expires_at = Carbon::parse("$date $time");
     }
 }

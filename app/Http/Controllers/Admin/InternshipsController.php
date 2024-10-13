@@ -46,7 +46,11 @@ class InternshipsController extends Controller
     {
         DB::transaction(function() use ($request) {
             $address = Address::create($request->validated()['address']);
-            $internship = Internship::create($request->validated() + [ 'address_id' => $address->id ]);
+            $internship = new Internship;
+            $internship->setExpiresAtDateAttribute($request->expires_at_date);
+            $internship->setExpiresAtTimeAttribute($request->expires_at_time);
+            $internship->fill(['address_id' => $address->id] + $request->validated());
+            $internship->save();
         });
 
         return redirect()
@@ -71,6 +75,8 @@ class InternshipsController extends Controller
     public function update(InternshipUpdateRequest $request, Internship $internship)
     {
         DB::transaction(function() use ($request, $internship) {
+            $internship->setExpiresAtDateAttribute($request->expires_at_date);
+            $internship->setExpiresAtTimeAttribute($request->expires_at_time);
             $internship->update($request->validated());
             $internship->address->update($request->validated()['address']);
         });

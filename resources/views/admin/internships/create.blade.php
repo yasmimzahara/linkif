@@ -109,7 +109,7 @@
                                 {{ __('Salário') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="1" min="1" name="wage" placeholder="255" value="{{old('wage')}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="0.01" min="1" name="wage" placeholder="255" value="{{old('wage')}}">
                             @error('wage')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -229,8 +229,16 @@
                                 {{ __('Prazo') }}
                             </label>
 
-                            <input class="block w-1/2 mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="datetime-local" name="expires_at" placeholder="255" value="{{old('expires_at')}}">
-                            @error('expires_at')
+                            <div class="flex">
+                                <input class="block w-1/2 m-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="date" name="expires_at_date" placeholder="255" value="{{old('expires_at_date')}}">
+                                <input class="block w-1/2 m-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="time" name="expires_at_time" placeholder="255" value="{{old('expires_at_time')}}">
+                            </div>
+                            @error('expires_at_date')
+                            <span class="text-red-600 text-sm">
+                                {{ $message }}
+                            </span>
+                            @enderror
+                            @error('expires_at_time')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
                             </span>
