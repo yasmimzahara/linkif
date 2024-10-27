@@ -1,6 +1,7 @@
 
 
-
+npm run dev
+php artisan serve
 
 editor WYSIWYG: https://github.com/slab/quill (é o que tem mais estrelas)
 ícones: https://heroicons.com/

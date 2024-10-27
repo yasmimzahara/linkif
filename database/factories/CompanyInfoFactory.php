@@ -19,7 +19,7 @@ class CompanyInfoFactory extends Factory
     public function definition(): array
     {
         return [
-            'cnpj' => fake()->cnpj(),
+            'cnpj' => fake()->cnpj(false),
             'phone' => fake()->phoneNumber(),
             'address_id' => Address::factory(),
             'company_id' => Company::factory(),

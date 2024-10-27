@@ -86,7 +86,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Operador de telégrafo',
             'description' => 'Precisa conhecer código morse',
             'company_id' => $companies->random()->id,
-            'expires_at' => new \DateTime('-80 years'),
+            'expires_at' => new \DateTime('-10 years'),
         ]);
         Application::factory()->create([
             'student_id' => $student->id,
