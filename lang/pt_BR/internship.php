@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'day' => 'Dia',
+    'morning' => 'Manhã',
     'afternoon' => 'Tarde',
     'night' => 'Noite',
 

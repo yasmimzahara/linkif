@@ -7,6 +7,12 @@ editor WYSIWYG: https://github.com/slab/quill (é o que tem mais estrelas)
 ícones: https://heroicons.com/
 `php artisan db:wipe; php artisan migrate; php artisan db:seed`
 
+## Usuarios
+- admin@linkif.com
+- yasmimz@gmail.com
+- mirellabpa@gmail.com
+- idar-oberstein.info@biontech.de
+
 ## nao feito
 - mudar data das migrations
 - select com ajax

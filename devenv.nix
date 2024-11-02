@@ -7,6 +7,22 @@
 
   packages = [ pkgs.nodejs_22];
 
+  services.mysql = {
+    enable = true;
+    initialDatabases = [
+      {
+        name = "linkif";
+      }
+    ];
+    ensureUsers = [
+      {
+        name = "root";
+        password = "";
+        ensurePermissions = { "linkif.*" = "ALL PRIVILEGES"; };
+      }
+    ];
+  };
+
   process.implementation = "overmind";
   processes = {
     npm-run.exec = "npm run dev";

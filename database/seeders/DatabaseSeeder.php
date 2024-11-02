@@ -55,6 +55,10 @@ class DatabaseSeeder extends Seeder
             'description' => '<h2>Me contrate agora</h2><ul><li>Sou pika</li><li>Sou foda</li></ul>',
             'student_id' => $student->id,
         ]);
+        Resume::factory()->create([
+            'description' => '<h2>Me contrate agora</h2><ul><li>Sei tudo</li><li>Sou feliz</li></ul>',
+            'student_id' => $student2->id,
+        ]);
         Resume::factory()->count(20)->create();
 
         $courses = collect([
@@ -75,7 +79,7 @@ class DatabaseSeeder extends Seeder
             'course_id' => $course->id,
             'title' => 'Bioinformata Engineer',
             'workload' => 20,
-            'shift' => 'day',
+            'shift' => 'morning',
             'description' => 'Trabalhar bastante, fazer café, limpar escritório',
             'wage' => 10_000,
             'company_id' => $company->id,

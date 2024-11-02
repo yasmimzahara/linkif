@@ -80,7 +80,7 @@
                         <div>
                             <select name="shift">
                                 <option>{{ __('Selecionar Turno') }}</option>
-                                <option value="day" @if(old('shift') == 'day') selected @endif>{{ __('Dia') }}</option>
+                                <option value="morning" @if(old('shift') == 'morning') selected @endif>{{ __('Manhã') }}</option>
                                 <option value="afternoon" @if(old('shift') == 'afternoon') selected @endif>{{ __('Tarde') }}</option>
                                 <option value="night" @if(old('shift') == 'night') selected @endif>{{ __('Noite') }}</option>
                             </select>

@@ -12,9 +12,36 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                    @if(\Auth::user()->type == 'admin')
+                        <x-nav-link :href="route('admin.admins.index')" :active="request()->routeIs('admin.admins.*')">
+                            {{ __('Admins') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.applications.index')" :active="request()->routeIs('admin.applications.*')">
+                            {{ __('Candidaturas') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.companies.index')" :active="request()->routeIs('admin.companies.*')">
+                            {{ __('Empresas') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.courses.index')" :active="request()->routeIs('admin.courses.*')">
+                            {{ __('Cursos') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.internships.index')" :active="request()->routeIs('admin.internships.*')">
+                            {{ __('Vagas') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.students.index')" :active="request()->routeIs('admin.students.*')">
+                            {{ __('Estudantes') }}
+                        </x-nav-link>
+                    @endif
+                    @if(\Auth::user()->type == 'student')
+                        <x-nav-link :href="route('student.resumes.edit')" :active="request()->routeIs('student.resumes.*')">{{ __('Editar Currículo') }}</x-nav-link>
+                        @if(\Auth::user()->resume)
+                            <x-nav-link :href="route('student.resumes.download')">{{ __('Baixar Currículo') }}</x-nav-link>
+                        @endif
+                        <x-nav-link :href="route('student.internships.index')" :active="request()->routeIs('student.internships.*')">{{ __('Vagas') }}</x-nav-link>
+                    @endif
+                    @if(\Auth::user()->type == 'company')
+                        <x-nav-link :href="route('company.internships.index')" :active="request()->routeIs('company.internships.*')">{{ __('Vagas') }}</x-nav-link>
+                    @endif
                 </div>
             </div>
 

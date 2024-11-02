@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('course_id')->constrained();
             $table->string('title');
             $table->integer('workload');
-            $table->enum('shift', ['day', 'afternoon', 'night']);
+            $table->enum('shift', ['morning', 'afternoon', 'night']);
             $table->string('description')->nullable();
             $table->decimal('wage', total: 8, places: 2);
             $table->foreignId('address_id')->constrained();

@@ -30,7 +30,7 @@ class InternshipUpdateRequest extends FormRequest
             'workload' => 'min:0',
             'shift' => [
                 'required',
-                Rule::in(['day', 'afternoon', 'night']),
+                Rule::in(['morning', 'afternoon', 'night']),
             ],
             'description' => '',
             'wage' => 'min:0',

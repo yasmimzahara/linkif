@@ -27,7 +27,7 @@ class InternshipFactory extends Factory
             'course_id' => Course::factory(),
             'title' => $title,
             'workload' => fake()->numberBetween(10, 30),
-            'shift' => fake()->randomElement([ 'day', 'afternoon', 'night' ]),
+            'shift' => fake()->randomElement([ 'morning', 'afternoon', 'night' ]),
             'description' => $title . '. ' . fake()->text(),
             'wage' => fake()->numberBetween(100, 5_000),
             'address_id' => Address::factory(),

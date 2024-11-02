@@ -30,7 +30,7 @@ class InternshipStoreRequest extends FormRequest
             'workload' => 'required|min:0',
             'shift' => [
                 'required',
-                Rule::in(['day', 'afternoon', 'night']),
+                Rule::in(['morning', 'afternoon', 'night']),
             ],
             'description' => 'required',
             'wage' => 'required|min:0',

@@ -15,9 +15,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     switch (\Auth::user()->type) {
-    case 'admin': return view('admin/dashboard');
-    case 'company': return view('company/dashboard');
-    case 'student': return view('student/dashboard');
+    case 'admin': return redirect()->route('admin.admins.index');
+    case 'company': return redirect()->route('company.internships.index');
+    case 'student': return redirect()->route('student.internships.index');
     }
 })->middleware(['auth', 'verified'])->name('dashboard');
 
