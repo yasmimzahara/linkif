@@ -17,7 +17,7 @@
                                 {{ __('Requisitos') }}
                             </label>
 
-                            <textarea class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="requirements" placeholder="1000">{{ old('requirements', $internship->requirements) }}</textarea>
+                            <textarea class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="requirements" >{{ old('requirements', $internship->requirements) }}</textarea>
                             @error('requirements')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -30,7 +30,7 @@
                                 {{ __('Agência Integradora') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="integration_agency" placeholder="255" value="{{old('integration_agency', $internship->integration_agency)}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="integration_agency" value="{{old('integration_agency', $internship->integration_agency)}}">
                             @error('integration_agency')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -57,7 +57,7 @@
                                 {{ __('Título') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="title" placeholder="255" value="{{old('title', $internship->title)}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="title" value="{{old('title', $internship->title)}}">
                             @error('title')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -70,7 +70,7 @@
                                 {{ __('Carga de Trabalho') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="1" min="1" max="40" name="workload" placeholder="255" value="{{old('workload', $internship->workload)}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="1" min="1" max="40" name="workload" value="{{old('workload', $internship->workload)}}">
                             @error('workload')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -97,7 +97,7 @@
                                 {{ __('Descrição') }}
                             </label>
 
-                            <textarea class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="description" placeholder="1000">{{ old('description', $internship->description) }}</textarea>
+                            <textarea class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="description" >{{ old('description', $internship->description) }}</textarea>
                             @error('description')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -110,7 +110,7 @@
                                 {{ __('Salário') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="0.01" min="1" name="wage" placeholder="255" value="{{old('wage', $internship->wage)}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="0.01" min="1" name="wage" value="{{old('wage', $internship->wage)}}">
                             @error('wage')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -124,7 +124,7 @@
                                     {{ __('Rua') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[street]" placeholder="255" value="{{old('address.street', $internship->address->street)}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[street]" value="{{old('address.street', $internship->address->street)}}">
                                 @error('address[street]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -137,7 +137,7 @@
                                     {{ __('Número') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[number]" placeholder="255" value="{{old('address.number', $internship->address->number)}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[number]" value="{{old('address.number', $internship->address->number)}}">
                                 @error('address[number]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -150,7 +150,7 @@
                                     {{ __('CEP') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[zip_code]" placeholder="255" value="{{old('address.zip_code', $internship->address->zip_code)}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[zip_code]" value="{{old('address.zip_code', $internship->address->zip_code)}}">
                                 @error('address[zip_code]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -163,7 +163,7 @@
                                     {{ __('Bairro') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[neighborhood]" placeholder="255" value="{{old('address.neighborhood', $internship->address->neighborhood)}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[neighborhood]" value="{{old('address.neighborhood', $internship->address->neighborhood)}}">
                                 @error('address[neighborhood]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -176,7 +176,7 @@
                                     {{ __('Cidade') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[city]" placeholder="255" value="{{old('address.city', $internship->address->city)}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[city]" value="{{old('address.city', $internship->address->city)}}">
                                 @error('address[city]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -189,7 +189,7 @@
                                     {{ __('Estado') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[state]" placeholder="255" value="{{old('address.state', $internship->address->state)}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[state]" value="{{old('address.state', $internship->address->state)}}">
                                 @error('address[state]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -202,7 +202,7 @@
                                     {{ __('País') }}
                                 </label>
 
-                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[country]" placeholder="255" value="{{old('address.country', $internship->address->country)}}">
+                                <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address[country]" value="{{old('address.country', $internship->address->country)}}">
                                 @error('address[country]')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
@@ -217,8 +217,8 @@
                             </label>
 
                             <div class="flex">
-                                <input class="block w-1/2 m-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="date" name="expires_at_date" placeholder="255" value="{{old('expires_at_date', $internship->expires_at_date)}}">
-                                <input class="block w-1/2 m-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="time" name="expires_at_time" placeholder="255" value="{{old('expires_at_time', $internship->expires_at_time)}}">
+                                <input class="block w-1/2 m-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="date" name="expires_at_date" value="{{old('expires_at_date', $internship->expires_at_date)}}">
+                                <input class="block w-1/2 m-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="time" name="expires_at_time" value="{{old('expires_at_time', $internship->expires_at_time)}}">
                             </div>
                             @error('expires_at_date')
                             <span class="text-red-600 text-sm">

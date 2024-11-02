@@ -16,7 +16,7 @@
                                 {{ __('Nome') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="name" placeholder="50" value="{{old('name')}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="name" value="{{old('name')}}">
                             @error('name')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -29,7 +29,7 @@
                                 {{ __('E-mail') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email" placeholder="255" value="{{old('email')}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email" value="{{old('email')}}">
                             @error('email')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
@@ -42,7 +42,7 @@
                                 {{ __('Matrícula') }}
                             </label>
 
-                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[registration_number]" placeholder="255" value="{{old('info.registration_number')}}">
+                            <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="info[registration_number]" value="{{old('info.registration_number')}}">
                             @error('info.registration_number')
                             <span class="text-red-600 text-sm">
                                 {{ $message }}
