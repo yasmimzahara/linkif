@@ -28,7 +28,7 @@ class AdminUpdateRequest extends FormRequest
                 'required',
                 'string',
                 'lowercase',
-                'email:rfc,dns',
+                'email',
                 Rule::unique('users')->ignore($this->admin->id),
             ],
         ];

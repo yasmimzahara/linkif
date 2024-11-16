@@ -28,7 +28,7 @@ class StudentUpdateRequest extends FormRequest
                 'required',
                 'string',
                 'lowercase',
-                'email:rfc,dns',
+                'email',
                 Rule::unique('users')->ignore($this->student->id),
             ],
             'resume.description' => 'nullable|string|max:5000',

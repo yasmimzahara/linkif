@@ -10,7 +10,6 @@
 
             <form method="GET" action="{{ route('company.internships.index') }}">
                 <input placeholder="{{ __('Procurar por vaga') }}" type="text" name="title" value="{{ request()->title }}">
-                <input placeholder="{{ __('Procurar por empresa') }}" type="text" name="company_name" value="{{ request()->company_name }}">
                 <input type="submit" style="display: none" />
             </form>
 

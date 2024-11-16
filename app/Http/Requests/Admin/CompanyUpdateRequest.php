@@ -28,7 +28,7 @@ class CompanyUpdateRequest extends FormRequest
                 'required',
                 'string',
                 'lowercase',
-                'email:rfc,dns',
+                'email',
                 Rule::unique('users')->ignore($this->company->id),
             ],
             'info.phone' => 'nullable|string',
