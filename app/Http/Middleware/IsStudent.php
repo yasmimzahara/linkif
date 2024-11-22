@@ -15,9 +15,11 @@ class IsStudent
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (session('user_type') != 'student') {
+        if (session('user_type', \Auth::user()->type) != 'student') {
             abort(403);
         }
+
+        session(['user_type' => 'student']);
 
         return $next($request);
     }

@@ -15,9 +15,11 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (session('user_type') != 'admin') {
+        if (session('user_type', \Auth::user()->type) != 'admin') {
             abort(403);
         }
+
+        session(['user_type' => 'admin']);
 
         return $next($request);
     }

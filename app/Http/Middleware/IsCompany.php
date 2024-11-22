@@ -15,9 +15,11 @@ class IsCompany
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (session('user_type') != 'company') {
+        if (session('user_type', \Auth::user()->type) != 'company') {
             abort(403);
         }
+
+        session(['user_type' => 'company']);
 
         return $next($request);
     }
