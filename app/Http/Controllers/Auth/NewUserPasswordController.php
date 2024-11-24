@@ -13,7 +13,6 @@ class NewUserPasswordController extends Controller
     public function create(User $user)
     {
         if ($user->password != '' || $user->remember_token != request()->token) {
-            dd($user->password);
             abort(403);
         }
 
