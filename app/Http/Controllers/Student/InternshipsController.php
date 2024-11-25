@@ -29,10 +29,10 @@ class InternshipsController extends Controller
                 ->join('users as companies', 'companies.id', '=', 'internships.company_id')
                 ->where('course_id', $this->currentStudentCourseId())
                 ->when(request()->my_internships_only, function($query) {
-                    $query->whereIn($this->currentStudentId(), \DB::table('applications')->whereColumn('applications.internship_id', 'internships.id')->select('student_id'));
+                    $query->whereIn(\DB::raw($this->currentStudentId()), \DB::table('applications')->whereColumn('applications.internship_id', 'internships.id')->select('student_id'));
                 })
                 ->when(request()->available_only, function($query) {
-                    $query->whereNotIn($this->currentStudentId(), \DB::table('applications')->whereColumn('applications.internship_id', 'internships.id')->select('student_id'))
+                    $query->whereNotIn(\DB::raw($this->currentStudentId()), \DB::table('applications')->whereColumn('applications.internship_id', 'internships.id')->select('student_id'))
                           ->where('expires_at', '>', new \DateTime());
                 })
                 ->select('internships.*')
